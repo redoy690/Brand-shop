@@ -17,7 +17,7 @@ const AllAssignment = () => {
                 <h2 className="font-bold text-center   py-4 text-5xl text-red-400 border-4 border-red-400 rounded-2xl">ALL ASSIGNMENT</h2>
             </div>
             <div className="text-end">
-                <select className="select select-bordered w-1/10" value={selects} onChange={e => setSelects(e.target.value)}>
+                <select className="select select-bordered w-1/6" value={selects} onChange={e => setSelects(e.target.value)}>
                     <option >All </option>
                     <option>Easy</option>
                     <option>Medium</option>
