@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 
 const SingleAssignment = ({ assi }) => {
-    const { _id,title, level, marks, date, details, photo, displayName, email } = assi
+    const { _id,title, level, totalMarks, date, questiondetails, photo, questiondisplayName, questionEmail } = assi
+    console.log(level)
     return (
         <div>
 
@@ -16,11 +17,11 @@ const SingleAssignment = ({ assi }) => {
                     <h2 className="card-title">Level: {level}</h2>
 
 
-                    <h2 className="card-title">Total Marks: {marks}</h2>
+                    <h2 className="card-title">Total Marks: {totalMarks}</h2>
                     <h2 className="card-title">Date: {date}</h2>
-                    <h2 className="card-title"> Crated By: {displayName} <span className="text-sm">({email})</span></h2>
+                    <h2 className="card-title"> Crated By: {questiondisplayName} <span className="text-sm">({questionEmail})</span></h2>
 
-                    <p className="card-title">Description: <span className="text-base">{details}</span></p>
+                    <p className="card-title">Description: <span className="text-base">{questiondetails}</span></p>
                     <div className="card-actions justify-center mt-10 mb-4">
                         <Link to={`/viewassignment/${_id}`}>
                             <button className="btn text-xl btn-primary">View Assignment</button>

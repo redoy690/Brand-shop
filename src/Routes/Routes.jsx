@@ -9,6 +9,11 @@ import MyAssignment from "../pages/MyAssignment/MyAssignment";
 import SubbmittedAssignment from "../pages/SubbmittedAssignment/SubbmittedAssignment";
 import ViewAssignment from "../pages/AllAssignment/ViewAssignment";
 import AnswerForm from "../pages/AllAssignment/AnswerForm";
+import PrivateRoute from "./PrivateRoute";
+import UpdateAssignment from "../pages/AllAssignment/UpdateAssignment";
+import GiveMarks from "../pages/SubbmittedAssignment/GiveMarks";
+import PendingAssignment from "../pages/MyAssignment/PendingAssignment";
+import CompleteAssignment from "../pages/MyAssignment/CompleteAssignment";
 
 
 
@@ -35,25 +40,47 @@ const router = createBrowserRouter([
             },
             {
                 path: "/createassignment",
-                element: <CreateAssignment></CreateAssignment>
+                element: <PrivateRoute><CreateAssignment></CreateAssignment></PrivateRoute>
             },
             {
-                path: "/myassignment",
-                element: <MyAssignment></MyAssignment>
+                path: "/runningassignment",
+                element: <PrivateRoute><MyAssignment></MyAssignment></PrivateRoute>,
+                loader: () => fetch(`http://localhost:5000/assignment`)
+            },
+            {
+                path: "/pendingassignment",
+                element: <PrivateRoute><PendingAssignment></PendingAssignment></PrivateRoute>,
+                loader: () => fetch(`http://localhost:5000/answer`)
+            },
+            {
+                path: "/completeassignment",
+                element: <PrivateRoute><CompleteAssignment></CompleteAssignment></PrivateRoute>,
+                loader: () => fetch(`http://localhost:5000/answer`)
             },
             {
                 path: "/subbmittedassignment",
-                element: <SubbmittedAssignment></SubbmittedAssignment>
+                element: <PrivateRoute><SubbmittedAssignment></SubbmittedAssignment></PrivateRoute>
             },
             {
                 path: "/viewassignment/:id",
-                element: <ViewAssignment></ViewAssignment>,
+                element: <PrivateRoute><ViewAssignment></ViewAssignment></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`)
             },
             {
                 path: "/viewassignment/:id/answerform",
-                element: <AnswerForm></AnswerForm>,
+                element: <PrivateRoute><AnswerForm></AnswerForm></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`)
+            },
+            
+            {
+                path: "/updateassignment/:id",
+                element: <PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`)
+            },
+            {
+                path: "/subbmittedassignment/:id",
+                element: <PrivateRoute><GiveMarks></GiveMarks></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/answer/${params.id}`)
             }
         ]
 

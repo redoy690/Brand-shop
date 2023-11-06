@@ -8,7 +8,7 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
 
     const nav = <>
-        <li className='mx-2  rounded-xl font-semibold border  mt-1  button_trans h '>
+        {/* <li className='mx-2  rounded-xl font-semibold border  mt-1  button_trans h '>
             <NavLink to="/" className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
             }
@@ -32,8 +32,8 @@ const Navbar = () => {
                 Create Assignment
             </NavLink>
         </li>
-        
-        <li className='mx-2 rounded-xl font-semibold border  mt-1  button_trans '>
+
+        <li className='mx-2 rounded-xl font-semibold border  mt-1  button_trans px-1'>
             <NavLink to="/subbmittedassignment" className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
             }
@@ -48,10 +48,83 @@ const Navbar = () => {
             >
                 My Assignment
             </NavLink>
+        </li> */}
+
+
+
+        <li className="border-2 rounded-xl m-1 bg-slate-100 ">
+            <NavLink to="/" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? " text-blue underline text-red-600 bg-white" : ""
+            }
+            >
+                Home
+            </NavLink>
         </li>
+        <li className="border-2 rounded-xl m-1 bg-slate-100">
+            <NavLink to="/allassignment" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
+            }
+            >
+                All Assignment
+            </NavLink>
+        </li>
+        <li className="border-2 rounded-xl m-1 bg-slate-100">
+            <NavLink to="/createassignment" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
+            }
+            >
+                Create Assignment
+            </NavLink>
+        </li>
+        <li className="border-2 rounded-xl m-1 bg-slate-100">
+            <NavLink to="/subbmittedassignment" className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
+            }
+            >
+                Submitted Assignment
+            </NavLink>
+        </li>
+
+        <li tabIndex={0} className="border-2 rounded-xl bg-slate-100 m-1 ">
+            <details className="">
+                <summary>My Assignment</summary>
+                <ul className=" z-[1] w-40 space-y-2  mt-8 border-4 p-4">
+                    <li>
+                        <NavLink to="/runningassignment" className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
+                        }
+                        >
+                            Running <br />Assignment
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/pendingassignment" className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
+                        }
+                        >
+                            Pending  <br /> Assignment
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/completeassignment" className={({ isActive, isPending }) =>
+                            isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
+                        }
+                        >
+                            Complete  <br />Assignment
+                        </NavLink>
+                    </li>
+                </ul>
+            </details>
+        </li>
+
+
+
+
+
+
         {
             !user &&
-            <li className='mx-2 rounded-xl font-semibold border  mt-1  button_trans '>
+            <li className="border-2 rounded-xl m-1 bg-slate-100">
                 <NavLink to="/register" className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
                 }
@@ -62,7 +135,7 @@ const Navbar = () => {
         }
         {
             !user &&
-            <li className='mx-2 rounded-xl font-semibold border  mt-1  button_trans '>
+            <li className="border-2 rounded-xl m-1 bg-slate-100">
                 <NavLink to="/login" className={({ isActive, isPending }) =>
                     isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
                 }

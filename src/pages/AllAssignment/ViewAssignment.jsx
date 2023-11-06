@@ -1,9 +1,9 @@
-import React from 'react';
+
 import { Link, useLoaderData } from 'react-router-dom';
 
 const ViewAssignment = () => {
     const assignment = useLoaderData()
-    const { _id, title, level, marks, date, details, photo, displayName, email } = assignment
+    const { _id,title, level, marks, date, details, photo, questiondisplayName, questionEmail  } = assignment
 
     return (
         <div>
@@ -16,8 +16,8 @@ const ViewAssignment = () => {
                     </h2>
                     <h2 className="card-title">{marks}</h2>
                     <h2 className="card-title">{date}</h2>
-                    <h2 className="card-title">{displayName}</h2>
-                    <h2 className="card-title">{email}</h2>
+                    <h2 className="card-title">{questiondisplayName}</h2>
+                    <h2 className="card-title">{questionEmail}</h2>
 
                     <p>{details}</p>
                     {/* <div className="card-actions justify-end">

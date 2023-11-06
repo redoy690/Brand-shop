@@ -5,22 +5,46 @@ import { AuthContext } from '../../providers/AuthProvider';
 import Swal from 'sweetalert2';
 
 const AnswerForm = () => {
-    const navigate= useNavigate()
+    const navigate = useNavigate()
     const assignment = useLoaderData()
-    const {  title, level, marks, date, details, photo, displayName, email } = assignment
-    const {user} = useContext(AuthContext)
-    const answerDisplayName=user?.displayName || '';
-    const answeremail=user?.email || '';
-    const createdDisplayName= displayName
-    const createdEmail= email
+    const { _id, title, totalMarks, questiondisplayName, questionEmail, level, date, questiondetails, photo } = assignment
+    const { user } = useContext(AuthContext)
+    const answerDisplayName = user?.displayName || '';
+    const answeremail = user?.email || '';
+
 
     const handleSubmit = e => {
         e.preventDefault()
         const form = e.target
         const answerlink = form.link.value
         const answertext = form.text.value
-        const status= 'Pending'
-        const allDetails = {answerlink,answertext,answerDisplayName,answeremail,title,level,marks,date,details,photo,createdDisplayName,createdEmail,status}
+        const status = 'Pending'
+        const givenmarks = 'none'
+        const marksfeedback = 'none'
+        const givermarksDisplayName ='none'
+        const givenmarksEmail ='none'
+        const allDetails =
+        {
+            title,
+            level,
+            totalMarks,
+            date,
+            questiondetails,
+            photo,
+            questiondisplayName,
+            questionEmail,
+            status,
+            answerlink,
+            answertext,
+            answerDisplayName,
+            answeremail,
+            givenmarks,
+            marksfeedback,
+            givermarksDisplayName,
+            givenmarksEmail
+
+        }
+
         fetch('http://localhost:5000/answer', {
             method: 'POST',
             headers: {
@@ -39,24 +63,27 @@ const AnswerForm = () => {
                         icon: 'success',
                         confirmButtonText: 'Back'
                     })
-                    navigate('/subbmittedassignment') 
+                    navigate('/subbmittedassignment')
                 }
             })
 
 
 
-           
 
     }
+
+
+
+
     return (
         <div className=' my-10 w-1/2 mx-auto'>
             <div className='border-2 rounded-xl mb-4'>
                 <h1 className='text-center mt-4 text-3xl font-bold'>Assignment Information</h1>
                 <div className='m-4 text-center mb-8'>
                     <h1 className='text-xl mb-2'>Assignment Title: {title}</h1>
-                    <h1 className='text-xl mb-2'>Assignment Marks: {marks}</h1>
-                    <h1 className='text-xl mb-2'>Assignment Created By: {createdDisplayName}</h1>
-                    ({createdEmail})
+                    <h1 className='text-xl mb-2'>Assignment Marks: {totalMarks}</h1>
+                    <h1 className='text-xl mb-2'>Assignment Created By: {questiondisplayName}</h1>
+                    ({questionEmail})
 
                 </div>
             </div>
