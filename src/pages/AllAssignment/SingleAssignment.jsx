@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const SingleAssignment = ({ assi }) => {
-    const { _id,title, level, marks, date, details, photo, displayName, email, status } = assi
+    const { _id,title, level, marks, date, details, photo, displayName, email } = assi
     return (
         <div>
 
@@ -11,7 +11,7 @@ const SingleAssignment = ({ assi }) => {
                 <div className="card-body">
                     <div className="flex justify-between">
                         <h2 className="card-title">Title: {title}</h2>
-                        <div className="badge badge-outline px-8 py-4 bg-yellow-200 text-lg text-red-500">{status}</div>
+                        {/* <div className="badge badge-outline px-8 py-4 bg-yellow-200 text-lg text-red-500">{status}</div> */}
                     </div>
                     <h2 className="card-title">Level: {level}</h2>
 

@@ -19,8 +19,8 @@ const CreateAssignment = () => {
         const date = form.date.value;
         const details = form.details.value;
         const photo = form.photo.value;
-        const status = 'Pending'
-        const newProduct = { title, level, marks, date, details, photo,displayName,email,status }
+        
+        const newProduct = { title, level, marks, date, details, photo,displayName,email }
 
 
         console.log(newProduct)
@@ -39,7 +39,7 @@ const CreateAssignment = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'success',
-                        text: 'Product added successfully',
+                        text: 'Assignment added successfully',
                         icon: 'success',
                         confirmButtonText: 'Back'
                     })
