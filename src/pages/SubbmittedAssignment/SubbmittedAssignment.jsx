@@ -18,17 +18,26 @@ const SubbmittedAssignment = () => {
         console.log(e.target.value)
         const val = parseInt(e.target.value)
         setItemsPerpage(val)
+        setCurrentPage(0)
+    }
+    const handlePrevpage = () =>{
+        if(currentPage > 0){
+            setCurrentPage(currentPage-1)
+        }
+    }
+
+    const handleNextPage = () =>{
+        if(currentPage < pages.length-1)
+           setCurrentPage(currentPage+1)
     }
 
 
 
-
-
     useEffect(() => {
-        fetch('http://localhost:5000/answer')
+        fetch(`http://localhost:5000/answer?page=${currentPage}&size=${itemsPerPage}'`)
             .then(res => res.json())
             .then(data => setData(data))
-    }, [])
+    }, [currentPage,itemsPerPage])
     console.log(data)
     return (
         <div>
@@ -41,15 +50,17 @@ const SubbmittedAssignment = () => {
                 }
             </div>
             <div className="pagination">
-                <p>{currentPage}</p>
+                
+                <button onClick={handlePrevpage}>Prev</button>
                 {
-                    pages.map(page => <button onClick={() => setCurrentPage(page)} className="btn" key={page}>{page}</button>)
+                    pages.map(page => <button  onClick={() => setCurrentPage(page)} className={currentPage == page ? 'selected' : undefined} key={page}>{page}</button>)
                 }
-                <select value={itemsPerPage}  onChange={handleItemsperpage} id="">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                <button onClick={handleNextPage}>Next</button>
+                <select className="border-2 border-black rounded-lg p-2" value={itemsPerPage}  onChange={handleItemsperpage} id="">
                     <option value="5">5</option>
                     <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
                 </select>
             </div>
         </div>

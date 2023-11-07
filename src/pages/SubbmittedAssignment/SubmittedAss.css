@@ -4,6 +4,13 @@
 }
 .pagination button{
     margin-right: 10px;
-    padding: 0 20px;
+    padding:8px 18px;
     background: orange;
+    border-radius: 10px;
+    color:antiquewhite;
+    font-size: 20px;
+}
+
+.pagination .selected{
+    background-color: red
 }
