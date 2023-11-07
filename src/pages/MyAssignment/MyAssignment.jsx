@@ -12,7 +12,10 @@ const MyAssignment = () => {
     console.log(myassign)
     return (
         <div >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div className='py-14'>
+                    <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">MY RUNNING ASSIGNMENT</h2>
+                </div>
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
                 {
                     myassign.filter(data => { return data.questionEmail == mail }).map(mycard => <MyAssCard key={mycard.id} mycard={mycard}></MyAssCard>)
                 }

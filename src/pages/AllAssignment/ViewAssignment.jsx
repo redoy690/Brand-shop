@@ -43,7 +43,7 @@ const ViewAssignment = () => {
                     
                     <div className="card-actions justify-start my-4 ml-4">
                         <Link to={`/viewassignment/${_id}/answerform`}>
-                            <button className="btn btn-primary  text-xl px-10 ">Take Assignment</button>
+                            <button className="btn btn-success text-white hover:text-success hover:bg-white text-xl px-10 ">Take Assignment</button>
                         </Link>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ const AllAssignment = () => {
     return (
         <div>
             <div className='py-14'>
-                <h2 className="font-bold text-center   py-4 text-5xl text-red-400 border-4 border-red-400 rounded-2xl">ALL ASSIGNMENT</h2>
+                <h2 className="font-bold text-center   py-4 text-5xl text-success border-4 border-success rounded-2xl">ALL ASSIGNMENT : {assignment.length}</h2>
             </div>
             <div className="text-end">
                 <select className="select select-bordered w-1/6" value={selects} onChange={e => setSelects(e.target.value)}>

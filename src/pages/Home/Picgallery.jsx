@@ -10,7 +10,9 @@ const Picgallery = () => {
                             <div className="flex flex-col lg:flex-row ">
                                 <div className="bg-white shadow-lg rounded-xl flex items-start h-32 w-[90%] lg:w-1/2 justify-center py-4 px-8 mx-4 my-2">
                                     <div className="flex items-center justify-start w-full">
-                                        <div className="flex-col w-[85%]">
+                                        <div className="flex-col w-[85%]" data-aos="fade-right"
+                                            data-aos-offset="300"
+                                            data-aos-easing="ease-in-sine">
                                             <div className="text-sm font-medium text-violet-600 my-2">Total Running Assignment</div>
                                             <div className="className flex items-center">
                                                 <div className="text-3xl font-bold text-gray-700">8</div>
@@ -27,7 +29,9 @@ const Picgallery = () => {
                                 </div>
                                 <div className="bg-white shadow-lg rounded-xl flex items-start h-32 w-[90%] lg:w-1/2 justify-center py-4 px-8 mx-4 my-2">
                                     <div className="flex items-center justify-start w-full">
-                                        <div className="flex-col w-[85%]">
+                                        <div className="flex-col w-[85%]" data-aos="fade-left"
+                                            data-aos-offset="300"
+                                            data-aos-easing="ease-in-sine">
                                             <div className="text-sm font-medium text-violet-600 my-2">Total Pending Assignment</div>
                                             <div className="className flex items-center">
                                                 <div className="text-3xl font-bold text-gray-700">4</div>
@@ -47,7 +51,9 @@ const Picgallery = () => {
                             <div className="flex flex-col lg:flex-row ">
                                 <div className="bg-white shadow-lg rounded-xl flex items-start max-w-1/2 w-[90%] lg:w-1/2 justify-center py-4 px-4 mx-4 my-2">
                                     <div className="flex items-center justify-start w-full">
-                                        <div className="flex-col w-[85%]">
+                                        <div className="flex-col w-[85%]" data-aos="fade-right"
+                                            data-aos-offset="300"
+                                            data-aos-easing="ease-in-sine">
                                             <div className="text-sm font-medium text-violet-600 my-2">Total Complete Assignment</div>
                                             <div className="className flex items-center">
                                                 <div className="text-3xl font-bold text-gray-700">7</div>
@@ -105,7 +111,9 @@ const Picgallery = () => {
                                 </div>
                                 <div className="bg-white shadow-lg rounded-xl flex items-start max-w-1/2 w-[90%] lg:w-1/2 justify-center py-4 px-4 mx-4 my-2">
                                     <div className="flex items-center justify-start w-full">
-                                        <div className="flex-col w-[85%]">
+                                        <div className="flex-col w-[85%]" data-aos="fade-left"
+                                            data-aos-offset="300"
+                                            data-aos-easing="ease-in-sine">
                                             <div className="text-sm font-medium text-violet-600 my-2">Weekly Users</div>
                                             <div className="className flex items-center">
                                                 <div className="text-3xl font-bold text-gray-700">16,568</div>
@@ -226,7 +234,7 @@ const Picgallery = () => {
                                                             " alt="" className="" />
                                     </div>
                                     <div className="flex flex-row lg:flex-col space-x-3 space-y-6 items-center justify-center ">
-                                        <div className="w-32 lg:w-40 h-48  overflow-hidden rounded-xl " data-aos="fade-up" data-aos-duration="3000"> 
+                                        <div className="w-32 lg:w-40 h-48  overflow-hidden rounded-xl " data-aos="fade-up" data-aos-duration="3000">
                                             <img src="https://i.ibb.co/X70ZWvz/d.png
                                     
                                                                 " alt="" className="" />

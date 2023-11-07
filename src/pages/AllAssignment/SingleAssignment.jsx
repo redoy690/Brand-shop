@@ -107,12 +107,12 @@ const SingleAssignment = ({ assi, setAssignment, assignment }) => {
                         </div>
                         <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 mx-2 mb-1 mt-4">
                             <Link to={`/viewassignment/${_id}`}>
-                                <button className="btn text-xl h-full btn-primary w-full py-2">View Assignment</button>
+                                <button className="btn h-full btn-success text-lg hover:bg-white hover:text-success text-white font-bold w-full py-2">View </button>
                             </Link>
                             <Link to={`/updateassignment/${_id}`}>
-                                <button className="btn text-xl h-full btn-primary w-full py-2">Update Assignment </button>
+                                <button className="btn text-lg h-full btn-success hover:bg-white hover:text-success w-full text-white py-2">Update  </button>
                             </Link>
-                            <button onClick={() => handleDelete(_id)} className="btn h-full text-xl btn-primary w-full py-2">Delete Assignment</button>
+                            <button onClick={() => handleDelete(_id)} className="btn h-full text-lg btn-success text-white hover:bg-white hover:text-success w-full py-2">Delete </button>
                         </div>
 
                     </div>

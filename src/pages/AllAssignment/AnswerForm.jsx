@@ -101,11 +101,11 @@ const AnswerForm = () => {
                             <label className="label">
                                 <span className="label-text">Note Text</span>
                             </label>
-                            <textarea className="textarea textarea-bordered h-28" name="text" placeholder="Note Text"></textarea>
+                            <textarea className="textarea textarea-bordered h-28" name="text" placeholder="Note Text" required></textarea>
 
                         </div>
                         <div className="form-control mt-6">
-                            <input type="submit" className='btn' value="Submit Answer" />
+                            <input type="submit" className='btn btn-success text-white text-2xl hover:text-success hover:bg-white font-bold' value="Submit Answer" />
                         </div>
                     </form>
                 </div>

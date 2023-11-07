@@ -67,7 +67,7 @@ const UpdateAssignment = () => {
         <div>
             <div className="bg-[#fff] border px-4 md:px-10 lg:px-32 pb-10 my-10">
                 <div className='py-14'>
-                    <h2 className="font-bold text-center  py-4 text-5xl text-red-400 border-4 border-red-400 rounded-2xl">UPDATE ASSIGNMENT</h2>
+                    <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">UPDATE ASSIGNMENT</h2>
                 </div>
                 <form onSubmit={handleupdateAssignment}>
 
@@ -140,7 +140,7 @@ const UpdateAssignment = () => {
                             </label>
                         </div>
                     </div>
-                    <input type="submit" className="btn btn-block mb-10  bg-red-400 text-white hover:border-red-400 hover:bg-white hover:text-red-400 font-bold text-3xl" value="Update Assignment" />
+                    <input type="submit" className="btn btn-block mb-10  btn-success hover:bg-white hover:text-success  text-white font-bold text-3xl" value="Update Assignment" />
                 </form>
             </div>
         </div>
