@@ -147,7 +147,7 @@ const Navbar = () => {
     </>
     return (
         <div>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100 mt-4">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -157,7 +157,11 @@ const Navbar = () => {
                             {nav}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <img className="w-[18%] mt-2" src="https://i.ibb.co/DYN86QF/Screenshot-6.png" alt="" />
+                    <div className="ml-2  ">
+                        <h2 className="font-extrabold text-2xl ">EDUCARE</h2>
+                        <p className="text-xs ">Your Tag Line Here</p>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -168,13 +172,13 @@ const Navbar = () => {
                     <div className="navbar-end">
                         {
                             user ?
-                                <div className="dropdown dropdown-bottom dropdown-end mr-4 ">
+                                <div className="dropdown dropdown-bottom dropdown-end ">
                                     <label tabIndex={0} >
                                         {
                                             user.photoURL ?
-                                                <img className="w-[50px] rounded-full" src={user.photoURL} alt="pic" />
+                                                <img className="w-[45px] rounded-full mt-2" src={user.photoURL} alt="pic" />
                                                 :
-                                                <img className="w-[50px] rounded-full" src='https://i.ibb.co/C0QmMFD/user.png' alt="pic" />
+                                                <img className="w-[45px] rounded-full" src='https://i.ibb.co/C0QmMFD/user.png' alt="pic" />
                                         }
                                     </label>
                                     <ul tabIndex={0} className="dropdown-content z-[1] menu  shadow bg-base-100 rounded-box w-52 p-4 mt-6">
@@ -192,7 +196,9 @@ const Navbar = () => {
                         }
                     </div>
                 </div>
+
             </div>
+            <div className="border-2 border-red-100"></div>
         </div>
     );
 };
