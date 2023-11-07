@@ -31,7 +31,7 @@ const AllAssignment = () => {
                     <option>Hard</option>
                 </select>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-10">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 py-10">
                 {
                     assignment.filter(card => { return selects == 'All' ? card : selects == card.level }).map(assi => <SingleAssignment assignment={assignment} setAssignment={setAssignment} key={assi._id} assi={assi}></SingleAssignment>)
                 }

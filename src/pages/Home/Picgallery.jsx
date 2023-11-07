@@ -200,44 +200,44 @@ const Picgallery = () => {
                                 <div
                                     className="flex flex-col lg:flex-row space-x-2 space-y-3 md:space-x-6   w-full items-center justify-center ">
 
-                                    <div className="lg:w-40 w-64 h-40  overflow-hidden rounded-xl ">
+                                    <div className="lg:w-40 w-64 h-40  overflow-hidden rounded-xl  " data-aos="fade-up" data-aos-duration="3000">
                                         <img src="https://i.ibb.co/LtGt8M5/p.png
 
                                     
                                                             " alt="" className="" />
                                     </div>
                                     <div className="flex flex-row lg:flex-col space-x-3 space-y-6 items-center justify-center">
-                                        <div className="w-32 lg:w-40 h-32  overflow-hidden rounded-xl ">
+                                        <div className="w-32 lg:w-40 h-32  overflow-hidden rounded-xl " data-aos="fade-up" data-aos-duration="3000">
                                             <img src="https://i.ibb.co/m5XnHqV/f.png
 
                                     
                                                                 " alt="" className="" />
                                         </div>
-                                        <div className="w-32 lg:w-40 h-48  overflow-hidden rounded-xl ">
+                                        <div className="w-32 lg:w-40 h-48  overflow-hidden rounded-xl " data-aos="fade-up" data-aos-duration="3000">
                                             <img src="https://i.ibb.co/myt98ZC/gg.png
 
                                     
                                                                 " alt="" className="" />
                                         </div>
                                     </div>
-                                    <div className="lg:w-60 w-64 h-74  overflow-hidden rounded-xl ">
+                                    <div className="lg:w-60 w-64 h-74  overflow-hidden rounded-xl " data-aos="fade-up" data-aos-duration="3000">
                                         <img src="https://i.ibb.co/QX421yD/421067-PE0-BR7-748.jpg
                                     
                                                             " alt="" className="" />
                                     </div>
                                     <div className="flex flex-row lg:flex-col space-x-3 space-y-6 items-center justify-center ">
-                                        <div className="w-32 lg:w-40 h-48  overflow-hidden rounded-xl ">
+                                        <div className="w-32 lg:w-40 h-48  overflow-hidden rounded-xl " data-aos="fade-up" data-aos-duration="3000"> 
                                             <img src="https://i.ibb.co/X70ZWvz/d.png
                                     
                                                                 " alt="" className="" />
                                         </div>
-                                        <div className="w-32 lg:w-40 h-32  overflow-hidden rounded-xl ">
+                                        <div className="w-32 lg:w-40 h-32  overflow-hidden rounded-xl " data-aos="fade-up" data-aos-duration="3000">
                                             <img src="https://i.ibb.co/88yZZY1/grrrr.png
                                     
                                                                 " alt="" className="" />
                                         </div>
                                     </div>
-                                    <div className="lg:w-40 w-64 h-40  overflow-hidden rounded-xl ">
+                                    <div className="lg:w-40 w-64 h-40  overflow-hidden rounded-xl " data-aos="fade-up" data-aos-duration="3000">
                                         <img src="https://i.ibb.co/9ZSsZG9/jj.png
                                     
                                                             " alt="" className="" />

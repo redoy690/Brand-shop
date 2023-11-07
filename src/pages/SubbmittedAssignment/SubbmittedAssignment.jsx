@@ -20,15 +20,15 @@ const SubbmittedAssignment = () => {
         setItemsPerpage(val)
         setCurrentPage(0)
     }
-    const handlePrevpage = () =>{
-        if(currentPage > 0){
-            setCurrentPage(currentPage-1)
+    const handlePrevpage = () => {
+        if (currentPage > 0) {
+            setCurrentPage(currentPage - 1)
         }
     }
 
-    const handleNextPage = () =>{
-        if(currentPage < pages.length-1)
-           setCurrentPage(currentPage+1)
+    const handleNextPage = () => {
+        if (currentPage < pages.length - 1)
+            setCurrentPage(currentPage + 1)
     }
 
 
@@ -37,26 +37,26 @@ const SubbmittedAssignment = () => {
         fetch(`http://localhost:5000/answer?page=${currentPage}&size=${itemsPerPage}'`)
             .then(res => res.json())
             .then(data => setData(data))
-    }, [currentPage,itemsPerPage])
+    }, [currentPage, itemsPerPage])
     console.log(data)
     return (
         <div>
             <div className='py-14'>
                 <h2 className="font-bold text-center  py-4 text-5xl text-red-400 border-4 border-red-400 rounded-2xl">SUBMITTED ASSIGNMENT</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 my-10">
+            <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-8 my-10">
                 {
                     data.map(data => <SingleSubmitAs key={data._id} data={data}></SingleSubmitAs>)
                 }
             </div>
             <div className="pagination">
-                
+
                 <button onClick={handlePrevpage}>Prev</button>
                 {
-                    pages.map(page => <button  onClick={() => setCurrentPage(page)} className={currentPage == page ? 'selected' : undefined} key={page}>{page}</button>)
+                    pages.map(page => <button onClick={() => setCurrentPage(page)} className={currentPage == page ? 'selected' : undefined} key={page}>{page}</button>)
                 }
                 <button onClick={handleNextPage}>Next</button>
-                <select className="border-2 border-black rounded-lg p-2" value={itemsPerPage}  onChange={handleItemsperpage} id="">
+                <select className="border-2 border-black rounded-lg p-2" value={itemsPerPage} onChange={handleItemsperpage} id="">
                     <option value="5">5</option>
                     <option value="10">10</option>
                     <option value="15">15</option>
