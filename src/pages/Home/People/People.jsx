@@ -1,6 +1,7 @@
-import React from 'react';
+
 
 const People = () => {
+   
     return (
         <div>
             <div className="flex justify-center  p-4 bg-gray-700 mt-10">

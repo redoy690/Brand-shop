@@ -12,7 +12,7 @@ const Home = () => {
             <Slider></Slider>
             <About></About>
             <Picgallery></Picgallery>
-            
+           
             <People></People>
             <Feature></Feature>
             
