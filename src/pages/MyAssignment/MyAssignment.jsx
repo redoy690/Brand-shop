@@ -17,9 +17,9 @@ const MyAssignment = () => {
                     myassign.filter(data => { return data.questionEmail == mail }).map(mycard => <MyAssCard key={mycard.id} mycard={mycard}></MyAssCard>)
                 }
             </div>
-            {
-                myassign.filter(data => { return data.questionEmail == mail }) < 1 && <p className='text-center pt-24 pb-48 text-2xl font-bold text-pink-700'>You do not have any Pending Assignment.</p>
-            }
+            {/* {
+                myassign.filter(data => { return data.questionEmail == mail }) < 1 && <p className='text-center pt-24 pb-48 text-2xl font-bold text-pink-700'>You do not have any Running Assignment.</p>
+            } */}
         </div>
     );
 };

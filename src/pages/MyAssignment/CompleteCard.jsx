@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const CompleteCard = ({mycard}) => {
     const { title, level, totalMarks, date, questiondetails, photo, displayName, email,status } = mycard

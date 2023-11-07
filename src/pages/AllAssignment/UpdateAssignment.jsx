@@ -1,10 +1,12 @@
-import  { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const UpdateAssignment = () => {
+    const { user } = useContext(AuthContext)
     const assignment = useLoaderData()
-    const { _id, title, level, totalMarks, date, questiondetails, photo, displayName, email } = assignment
+    const { _id, title, level, totalMarks, date, questiondetails, photo, displayName, email, questionEmail } = assignment
 
 
     const navigate = useNavigate()
@@ -15,7 +17,7 @@ const UpdateAssignment = () => {
         event.preventDefault();
         const form = event.target
         const title = form.title.value;
-        const level = selects;  
+        const level = selects;
         const totalMarks = form.marks.value;
         const date = form.date.value;
         const questiondetails = form.details.value;
@@ -27,29 +29,38 @@ const UpdateAssignment = () => {
         console.log(updateassignment)
 
 
-        fetch(`http://localhost:5000/assignment/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updateassignment)
+        if (questionEmail == user.email) {
 
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.modifiedCount > 0) {
-                    Swal.fire({
-                        title: 'success',
-                        text: 'Product Updated successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Back'
-                    })
-                    navigate('/allassignment')
-                }
+            fetch(`http://localhost:5000/assignment/${_id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updateassignment)
+
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.modifiedCount > 0) {
+                        Swal.fire({
+                            title: 'success',
+                            text: 'Product Updated successfully',
+                            icon: 'success',
+                            confirmButtonText: 'Back'
+                        })
+                        navigate('/allassignment')
+                    }
+                })
 
+        } else {
+            return Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Your are Not able to edit others Assignment",
 
+            });
+        }
 
     }
     return (
