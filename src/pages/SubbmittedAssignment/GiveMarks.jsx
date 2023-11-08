@@ -12,11 +12,17 @@ const GiveMarks = () => {
     const data = useLoaderData()
     const { _id,
         title,
+        level,
         totalMarks,
+        date,
         questiondetails,
         photo,
+        questiondisplayName,
+        questionEmail,
         answerlink,
         answertext,
+        answerDisplayName,
+        answeremail,
 
     } = data
 
@@ -30,21 +36,58 @@ const GiveMarks = () => {
         const marksfeedback = form.feedback.value;
         const status = 'Complete'
 
-        const updateMarks = { givenmarks, marksfeedback, status, givermarksDisplayName, givenmarksEmail }
+        const updateMarks = {
+            title,
+            level,
+            totalMarks,
+            date,
+            questiondetails,
+            photo,
+            questiondisplayName,
+            questionEmail,
+            status,
+            answerlink,
+            answertext,
+            answerDisplayName,
+            answeremail,
+            givenmarks,
+            marksfeedback,
+            givermarksDisplayName,
+            givenmarksEmail
+        }
 
 
         console.log(updateMarks)
-        // if(givenmarks >= totalMarks){
-        //     return Swal.fire({
-        //         title: 'error',
-        //         text: 'Your given marks must be small Total marks',
-        //         icon: 'error',
-        //         confirmButtonText: 'Back'
-        //     })
-        // } 
 
-        fetch(`http://localhost:5000/answer/${_id}`, {
-            method: 'PUT',
+
+        // fetch(`http://localhost:5000/answer/${_id}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(updateMarks)
+
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         if (data.modifiedCount > 0) {
+        //             Swal.fire({
+        //                 title: 'success',
+        //                 text: 'Submited Marks successfully',
+        //                 icon: 'success',
+        //                 confirmButtonText: 'Back'
+        //             })
+        //             navigate('/subbmittedassignment')
+        //         }
+        //     })
+
+
+
+
+        // send data to the server
+        fetch('http://localhost:5000/marks', {
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
@@ -54,7 +97,7 @@ const GiveMarks = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.modifiedCount > 0) {
+                if (data.insertedId) {
                     Swal.fire({
                         title: 'success',
                         text: 'Submited Marks successfully',
@@ -64,6 +107,24 @@ const GiveMarks = () => {
                     navigate('/subbmittedassignment')
                 }
             })
+
+
+
+
+        fetch(`http://localhost:5000/answers/${_id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                // if (data.deletedCount > 0) {
+                    
+                //     const remaining = olddata.filter(mcart => mcart._id !== _id)
+                //     setOldData(remaining)
+                // }
+            })
+
+
 
 
     }

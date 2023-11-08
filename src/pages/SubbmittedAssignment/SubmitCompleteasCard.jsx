@@ -1,18 +1,17 @@
+import { Link } from 'react-router-dom';
 
-import { Link } from "react-router-dom";
-
-
-const PendingCard = ({ mycard }) => {
-
+const SubmitCompleteasCard = ({data}) => {
     const {
         _id,
-        status,
         title,
         level,
         totalMarks,
         date,
         questiondetails,
         photo,
+        questiondisplayName,
+        questionEmail,
+        status,
         answerlink,
         answertext,
         answerDisplayName,
@@ -21,9 +20,9 @@ const PendingCard = ({ mycard }) => {
         marksfeedback,
         givermarksDisplayName,
         givenmarksEmail
-    } = mycard
+    } = data
 
-  
+
     return (
         <div>
             <div>
@@ -50,7 +49,7 @@ const PendingCard = ({ mycard }) => {
                         <img className="  rounded-2xl" src={photo} alt="" />
                         <div className="bg-white rounded-2xl">
                             <div className="p-4">
-                                
+                                <div className="badge px-6 py-4 mb-4 text-base border-red-400 text-pink-600 " >{status}</div>
                                 <h2 className="font-bold text-2xl ">Assignment Title: {title}</h2>
                                 <div className="flex">
                                     <h3 className="w-[150px]">Assignment level</h3>
@@ -69,7 +68,14 @@ const PendingCard = ({ mycard }) => {
                                     <div className="sm:h-[150px] md:h-[120px] lg:h-[80px]">
                                         <p >{questiondetails.slice(0, 160)}</p>
                                     </div>
-                                    
+                                    <div className="md:flex">
+                                        <div className="flex-1"></div>
+                                        <div className="border-2  mt-4 mx-auto w-[80%] text-center md:w-[40%]  rounded-xl px-8 py-2 ">
+                                            <p className="text-xs">Assignment Created By:</p>
+                                            <p>UserName: {questiondisplayName}</p>
+                                            <p className="text-xs">({questionEmail})</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +92,7 @@ const PendingCard = ({ mycard }) => {
                                     </div>
                                     <div className="md:flex mb-1">
                                         <div className="flex-1"></div>
-                                        <div className="border-2  mt-4 mx-auto w-[80%] text-center md:w-[45%]  rounded-xl px-8 py-2 ">
+                                        <div className="border-2  mt-4 mx-auto w-[80%] text-center md:w-[40%]  rounded-xl px-8 py-2 ">
                                             <p className="text-xs">Answer Given By:</p>
                                             <p>UserName: {answerDisplayName}</p>
                                             <p className="text-xs">({answeremail})</p>
@@ -99,21 +105,21 @@ const PendingCard = ({ mycard }) => {
                         <div className="bg-white rounded-2xl mt-4 ">
                             <div className="p-4">
                                 <div className="">
-                                    <h2 className="font-bold text-base ">Achived Marks:
-                                        {
-                                            status == "Pending" ?
-                                                ''
-                                                :
-                                                <span className='ml-2'>{givenmarks}</span>
-                                        }
+                                    <h2 className="font-bold text-base ">Achived Marks: 
+                                    {
+                                        status == "Pending" ?
+                                        ''
+                                        :
+                                        <span className='ml-2'>{givenmarks}</span>
+                                    }
                                     </h2>
                                     <h2 className="font-bold text-base mt-4">Marking Feedback:</h2>
                                     <div className="sm:h-[150px] md:h-[120px] lg:h-[80px]">
                                         {
                                             status == "Pending" ?
-                                                ''
-                                                :
-                                                <p >{marksfeedback.slice(0, 160)}</p>
+                                            ''
+                                            :
+                                            <p >{marksfeedback.slice(0, 160)}</p>
                                         }
                                     </div>
 
@@ -124,7 +130,7 @@ const PendingCard = ({ mycard }) => {
                                     <div className=" ">
                                         {
                                             status == "Pending" ?
-                                                <Link to={`/subbmittedassignment/${_id}`}>
+                                                <Link to={`/subbmittedassignment/givenmarks/${_id}`}>
                                                     <button className=" btn btn-secondary  w-[84%] ml-10 btn-outline">Give Mark</button>
                                                 </Link>
                                                 :
@@ -144,9 +150,8 @@ const PendingCard = ({ mycard }) => {
                     </div>
                 </div>
             </div>
-            
         </div>
     );
 };
 
-export default PendingCard;
+export default SubmitCompleteasCard;

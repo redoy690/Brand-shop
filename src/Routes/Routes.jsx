@@ -6,7 +6,6 @@ import Login from "../pages/Login/Login";
 import AllAssignment from "../pages/AllAssignment/AllAssignment";
 import CreateAssignment from "../pages/CreateAssignment/CreateAssignment";
 import MyAssignment from "../pages/MyAssignment/MyAssignment";
-import SubbmittedAssignment from "../pages/SubbmittedAssignment/SubbmittedAssignment";
 import ViewAssignment from "../pages/AllAssignment/ViewAssignment";
 import AnswerForm from "../pages/AllAssignment/AnswerForm";
 import PrivateRoute from "./PrivateRoute";
@@ -15,6 +14,9 @@ import GiveMarks from "../pages/SubbmittedAssignment/GiveMarks";
 import PendingAssignment from "../pages/MyAssignment/PendingAssignment";
 import CompleteAssignment from "../pages/MyAssignment/CompleteAssignment";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import SubbmittedAssignment from "../pages/SubbmittedAssignment/SubbmittedAssignment";
+import SubmitCompleteas from "../pages/SubbmittedAssignment/SubmitCompleteas";
+
 
 
 
@@ -67,6 +69,11 @@ const router = createBrowserRouter([
                 loader: () => fetch('http://localhost:5000/assignmentCount')
             },
             {
+                path: "/submitcompleteas",
+                element: <PrivateRoute><SubmitCompleteas></SubmitCompleteas></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/resultCount')
+            },
+            {
                 path: "/viewassignment/:id",
                 element: <PrivateRoute><ViewAssignment></ViewAssignment></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`)
@@ -83,7 +90,7 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`)
             },
             {
-                path: "/subbmittedassignment/:id",
+                path: "/subbmittedassignment/givenmarks/:id",
                 element: <PrivateRoute><GiveMarks></GiveMarks></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/answer/${params.id}`)
             }

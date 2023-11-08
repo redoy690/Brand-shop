@@ -131,7 +131,7 @@ const SingleSubmitAs = ({ data }) => {
                                     <div className=" ">
                                         {
                                             status == "Pending" ?
-                                                <Link to={`/subbmittedassignment/${_id}`}>
+                                                <Link to={`/subbmittedassignment/givenmarks/${_id}`}>
                                                     <button className=" btn btn-secondary  w-[84%] ml-10 btn-outline">Give Mark</button>
                                                 </Link>
                                                 :
