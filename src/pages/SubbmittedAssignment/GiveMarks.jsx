@@ -137,7 +137,8 @@ const GiveMarks = () => {
 
 
     return (
-        <div>
+
+        <div> 
             <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl my-8">GIVE MARKS</h2>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8'>
                 <div className="card bg-base-100 shadow-xl border-2">
