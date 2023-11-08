@@ -1,10 +1,10 @@
-import React from 'react';
+
 
 const Picgallery = () => {
     return (
         <div>
             <div>
-                <div>
+                {/* <div>
                     <div className="flex items-center justify-center bg-gray-50 p-4">
                         <div className="flex flex-col max-w-7xl w-full md:w-[80%]">
                             <div className="flex flex-col lg:flex-row ">
@@ -176,7 +176,7 @@ const Picgallery = () => {
                     </div>
                     <script src="https://cdn.tailwindcss.com"></script>
 
-                </div>
+                </div> */}
             </div>
             <div>
                 <div>
