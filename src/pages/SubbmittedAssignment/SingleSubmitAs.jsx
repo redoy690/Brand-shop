@@ -71,7 +71,7 @@ const SingleSubmitAs = ({ data }) => {
                                     </div>
                                     <div className="md:flex">
                                         <div className="flex-1"></div>
-                                        <div className="border-2  mt-4 mx-auto w-[80%] text-center md:w-[40%]  rounded-xl px-8 py-2 ">
+                                        <div className="border-2  mt-4 mx-auto w-[84%] text-center md:w-[45%]  rounded-xl px-8 py-2 ">
                                             <p className="text-xs">Assignment Created By:</p>
                                             <p>UserName: {questiondisplayName}</p>
                                             <p className="text-xs">({questionEmail})</p>

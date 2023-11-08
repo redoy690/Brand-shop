@@ -4,6 +4,9 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
 
+
+
+
 const GiveMarks = () => {
     const { user } = useContext(AuthContext)
     const givermarksDisplayName = user?.displayName || '';
@@ -104,7 +107,7 @@ const GiveMarks = () => {
                         icon: 'success',
                         confirmButtonText: 'Back'
                     })
-                    navigate('/subbmittedassignment')
+                    navigate('/submitcompleteas')
                 }
             })
 
@@ -189,7 +192,7 @@ const GiveMarks = () => {
                         </div>
                     </form>
                 </div>
-
+                
             </div>
         </div>
     );

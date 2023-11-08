@@ -63,7 +63,7 @@ const AnswerForm = () => {
                         icon: 'success',
                         confirmButtonText: 'Back'
                     })
-                    navigate('/subbmittedassignment')
+                    navigate('/allassignment')
                 }
             })
 
@@ -76,9 +76,9 @@ const AnswerForm = () => {
 
 
     return (
-        <div className=' my-10 w-1/2 mx-auto'>
+        <div className=' my-10 w-full md:w-1/2 mx-auto'>
             <div className='border-2 rounded-xl mb-4'>
-                <h1 className='text-center mt-4 text-3xl font-bold'>Assignment Information</h1>
+                <h1 className='text-center mt-4 text-2xl md:text-3xl font-bold'>Assignment Information</h1>
                 <div className='m-4 text-center mb-8'>
                     <h1 className='text-xl mb-2'>Assignment Title: {title}</h1>
                     <h1 className='text-xl mb-2'>Assignment Marks: {totalMarks}</h1>
@@ -88,7 +88,7 @@ const AnswerForm = () => {
                 </div>
             </div>
             <div className='border-2 rounded-xl'>
-                <h1 className='text-center mt-4 text-3xl font-bold'>Submit Your Answer Here</h1>
+                <h1 className='text-center mt-4 md:text-3xl text-2xl font-bold'>Submit Your Answer Here</h1>
                 <div className="card flex-shrink-0 w-full   ">
                     <form className="card-body " onSubmit={handleSubmit}>
                         <div className="form-control">

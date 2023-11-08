@@ -42,7 +42,7 @@ const SubbmittedAssignment = () => {
     return (
         <div>
             <div className='py-14'>
-                <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">SUBMITTED ASSIGNMENT : {count}</h2>
+                <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">PENDING ASSIGNMENT : {count}</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-8 my-10">
                 {

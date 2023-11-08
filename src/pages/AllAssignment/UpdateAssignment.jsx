@@ -45,7 +45,7 @@ const UpdateAssignment = () => {
                     if (data.modifiedCount > 0) {
                         Swal.fire({
                             title: 'success',
-                            text: 'Product Updated successfully',
+                            text: 'Assignment Updated successfully',
                             icon: 'success',
                             confirmButtonText: 'Back'
                         })

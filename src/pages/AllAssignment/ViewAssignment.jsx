@@ -7,7 +7,7 @@ const ViewAssignment = () => {
 
     return (
         <div>
-            <div className="card  bg-base-100 shadow-xl my-10">
+            <div className="card  bg-base-100 shadow-xl my-10 mx-2 md:mx-10">
                 <figure><img src={photo} alt="Shoes" className='h-[90vh] w-full' /></figure>
                 <div className="lg:mx-4">
                     <div className="bg-white rounded-2xl mt-4 ">
