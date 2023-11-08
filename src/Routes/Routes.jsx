@@ -18,6 +18,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path: "/allassignment",
                 element: <AllAssignment></AllAssignment>
-                
+
             },
             {
                 path: "/createassignment",
@@ -47,18 +48,18 @@ const router = createBrowserRouter([
             },
             {
                 path: "/runningassignment",
-                element: <PrivateRoute><MyAssignment></MyAssignment></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/assignment`)
+                element: <PrivateRoute><MyAssignment></MyAssignment></PrivateRoute>
+                
             },
             {
                 path: "/pendingassignment",
                 element: <PrivateRoute><PendingAssignment></PendingAssignment></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/answer`)
+                
             },
             {
                 path: "/completeassignment",
-                element: <PrivateRoute><CompleteAssignment></CompleteAssignment></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/answer`)
+                element: <PrivateRoute><CompleteAssignment></CompleteAssignment></PrivateRoute>
+                
             },
             {
                 path: "/subbmittedassignment",
@@ -75,7 +76,7 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AnswerForm></AnswerForm></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`)
             },
-            
+
             {
                 path: "/updateassignment/:id",
                 element: <PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,

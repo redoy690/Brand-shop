@@ -12,20 +12,12 @@ const GiveMarks = () => {
     const data = useLoaderData()
     const { _id,
         title,
-        level,
         totalMarks,
-        date,
         questiondetails,
         photo,
-        questiondisplayName,
-        questionEmail,
-        status,
         answerlink,
         answertext,
-        answerDisplayName,
-        answeremail,
-        givenmarks,
-        marksfeedback,
+
     } = data
 
 
@@ -42,14 +34,14 @@ const GiveMarks = () => {
 
 
         console.log(updateMarks)
-        if(givenmarks > totalMarks){
-            return Swal.fire({
-                title: 'error',
-                text: 'Your given marks must be small Total marks',
-                icon: 'error',
-                confirmButtonText: 'Back'
-            })
-        } 
+        // if(givenmarks >= totalMarks){
+        //     return Swal.fire({
+        //         title: 'error',
+        //         text: 'Your given marks must be small Total marks',
+        //         icon: 'error',
+        //         confirmButtonText: 'Back'
+        //     })
+        // } 
 
         fetch(`http://localhost:5000/answer/${_id}`, {
             method: 'PUT',
@@ -89,10 +81,10 @@ const GiveMarks = () => {
                     <figure><img src={photo} alt="Shoes" /></figure>
                     <div className="card-body">
                         <div className="">
-                            
                             <div className="">
                                 <h3 className="font-bold">Assignment Title    :
-                                <span className='ml-1 font-normal'> {title}</span></h3>
+                                    <span className='ml-1 font-normal'> {title}</span>
+                                </h3>
                             </div>
                             <div className="flex">
                                 <h3 className="font-bold">Assignment Mark: </h3>
@@ -100,7 +92,6 @@ const GiveMarks = () => {
                             </div>
                             <div className="">
                                 <h3 className="font-bold">Assignment Description:</h3>
-                               
                                 <p className='font-normal'> {questiondetails.slice(0, 200)}</p>
                             </div>
                         </div>
@@ -111,10 +102,8 @@ const GiveMarks = () => {
                     <div className="card-body">
                         <h2 className=" ">
                             <p className='text-lg font-bold'>Answer Link: <span className='font-normal'>{answerlink}</span></p>
-
                         </h2>
                         <p className='text-lg font-bold mt-4'>Node Text: <span className='font-normal'>{answertext}</span></p>
-
                     </div>
                 </div>
                 <div className="card shadow-xl border-2">
@@ -132,7 +121,6 @@ const GiveMarks = () => {
                                     <span className="label-text mt-4 text-lg">Feedback</span>
                                 </label>
                                 <textarea className="textarea textarea-bordered" name="feedback" placeholder="Write something about result"></textarea>
-
                             </div>
                             <div className="form-control mt-8">
                                 <input type="submit" value="Give Mark" className="btn btn-success text-white font-bold text-xl hover:text-success  hover:bg-white" />

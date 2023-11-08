@@ -1,16 +1,25 @@
 import { useContext } from "react";
 
 import { AuthContext } from "../../providers/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+
 import PendingCard from "./PendingCard";
+import { useQuery } from "@tanstack/react-query";
 
 
 const PendingAssignment = () => {
     const { user } = useContext(AuthContext)
-    const mail = user.email
-    const myassign = useLoaderData()
+ 
+    const {isPending, data:myassign} = useQuery({
+        queryKey:['completeassignment'],
+        queryFn: async() =>{
+            const res = await fetch(`http://localhost:5000/answers?questionEmail=${user.email}`)
+            return res.json()
+        }
+    })
     
-   
+   if(isPending){
+    return <span className="loading loading-spinner loading-lg ml-[50%] mt-[10%]"></span>
+   }
     
     return (
         <div>
@@ -20,7 +29,7 @@ const PendingAssignment = () => {
                 </div>
                 <div className="grid grid-cols-1 gap-8 mt-10">
                     {
-                        myassign.filter(data => { return data.questionEmail == mail && data.status == "Pending" }).map(mycard => <PendingCard key={mycard._id} mycard={mycard}></PendingCard>)
+                        myassign.filter(data => { return data.status == "Pending" }).map(mycard => <PendingCard key={mycard._id} mycard={mycard}></PendingCard>)
                     }
                 </div>
                 <div>
