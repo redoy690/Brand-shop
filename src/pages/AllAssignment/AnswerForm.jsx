@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const AnswerForm = () => {
     const navigate = useNavigate()
     const assignment = useLoaderData()
-    const { _id, title, totalMarks, questiondisplayName, questionEmail, level, date, questiondetails, photo } = assignment
+    const {  title, totalMarks, questiondisplayName, questionEmail, level, date, questiondetails, photo } = assignment
     const { user } = useContext(AuthContext)
     const answerDisplayName = user?.displayName || '';
     const answeremail = user?.email || '';

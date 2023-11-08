@@ -6,6 +6,7 @@ import { FaGoogle } from "react-icons/fa";
 
 
 
+
 const Login = () => {
 
     const {signIn,googleLogin}=useContext(AuthContext)
@@ -37,8 +38,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.user);
                 toast.success("Login successfull")
-                navigate(location?.state ? location.state : '/')
-
+                navigate(location?.state ? location.state : '/')       
             })
             .catch(error => {
                 console.log(error)

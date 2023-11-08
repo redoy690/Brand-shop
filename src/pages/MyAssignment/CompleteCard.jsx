@@ -73,7 +73,7 @@ const CompleteCard = ({ mycard }) => {
                     {/* answer part */}
                     <div className="bg-white rounded-2xl mt-4 ">
                         <div className="p-4">
-                            <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink}</span></h2>
+                            <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink.slice(0,50)}</span></h2>
                             <div className="mt-2">
                                 <h2 className="font-bold text-lg">Answer Feedback:</h2>
                                 <div className="sm:h-[150px] md:h-[120px] lg:h-[60px]">
@@ -81,7 +81,7 @@ const CompleteCard = ({ mycard }) => {
                                 </div>
                                 <div className="md:flex mb-1">
                                     <div className="flex-1"></div>
-                                    <div className="border-2  mt-4 mx-auto w-[80%] text-center md:w-[40%]  rounded-xl px-8 py-2 ">
+                                    <div className="border-2  mt-4 mx-auto w-[90%] text-center md:w-[50%]  rounded-xl px-8 py-2 ">
                                         <p className="text-xs">Answer Given By:</p>
                                         <p>UserName: {answerDisplayName}</p>
                                         <p className="text-xs">({answeremail})</p>

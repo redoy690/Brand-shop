@@ -23,7 +23,7 @@ const PendingAssignment = () => {
 
     return (
         <div>
-            <div >
+            <div className="">
                 <div className='py-14'>
                     <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">MY PENDING ASSIGNMENT:{myassign.length}</h2>
                 </div>

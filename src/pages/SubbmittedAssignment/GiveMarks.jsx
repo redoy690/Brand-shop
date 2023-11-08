@@ -1,8 +1,11 @@
 
 import { useContext } from 'react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import {  useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
+
+
+
 
 
 
@@ -63,28 +66,7 @@ const GiveMarks = () => {
         console.log(updateMarks)
 
 
-        // fetch(`http://localhost:5000/answer/${_id}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(updateMarks)
-
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data)
-        //         if (data.modifiedCount > 0) {
-        //             Swal.fire({
-        //                 title: 'success',
-        //                 text: 'Submited Marks successfully',
-        //                 icon: 'success',
-        //                 confirmButtonText: 'Back'
-        //             })
-        //             navigate('/subbmittedassignment')
-        //         }
-        //     })
-
+  
 
 
 
@@ -120,11 +102,7 @@ const GiveMarks = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                // if (data.deletedCount > 0) {
-                    
-                //     const remaining = olddata.filter(mcart => mcart._id !== _id)
-                //     setOldData(remaining)
-                // }
+                
             })
 
 
@@ -138,10 +116,10 @@ const GiveMarks = () => {
 
     return (
 
-        <div> 
-            <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl my-8">GIVE MARKS</h2>
+        <div className=''>
+            <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl  my-8">GIVE MARKS</h2>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8'>
-                <div className="card bg-base-100 shadow-xl border-2">
+                <div className="card bg-base-100 shadow-xl border-2 ">
                     <h2 className='text-center text-2xl my-4 font-bold'>ASSIGNMENT DETAILS</h2>
                     <figure><img src={photo} alt="Shoes" /></figure>
                     <div className="card-body">
@@ -162,16 +140,16 @@ const GiveMarks = () => {
                         </div>
                     </div>
                 </div>
-                <div className="card bg-base-100 shadow-xl border-2">
+                <div className="card bg-base-100 shadow-xl border-2 ">
                     <h2 className='text-center text-2xl my-4 font-bold border-b-2 pb-4'>ANSWER DETAILS</h2>
                     <div className="card-body">
                         <h2 className=" ">
-                            <p className='text-lg font-bold'>Answer Link: <span className='font-normal'>{answerlink}</span></p>
+                            <p className='text-lg font-bold'>Answer Link:<br/> <span className='text-sm font-normal'>{answerlink.slice(0, 40)}</span></p>
                         </h2>
                         <p className='text-lg font-bold mt-4'>Node Text: <span className='font-normal'>{answertext}</span></p>
                     </div>
                 </div>
-                <div className="card shadow-xl border-2">
+                <div className="card shadow-xl border-2 ">
                     <h2 className='text-center text-2xl my-4 font-bold border-b-2 pb-4 '>MARKING OPTION</h2>
                     <form onSubmit={handlegivenmark}>
                         <div className="  bg-base-100 mx-8">
@@ -188,12 +166,12 @@ const GiveMarks = () => {
                                 <textarea className="textarea textarea-bordered" name="feedback" placeholder="Write something about result"></textarea>
                             </div>
                             <div className="form-control mt-8">
-                                <input type="submit" value="Give Mark" className="btn btn-success text-white font-bold text-xl hover:text-success  hover:bg-white" />
+                                <input type="submit" value="Give Mark" className="btn btn-success mb-8 text-white font-bold text-xl hover:text-success  hover:bg-white" />
                             </div>
                         </div>
                     </form>
                 </div>
-                
+
             </div>
         </div>
     );

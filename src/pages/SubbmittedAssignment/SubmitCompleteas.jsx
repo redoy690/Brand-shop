@@ -39,7 +39,7 @@ const SubmitCompleteas = () => {
     }, [currentPage, itemsPerPage])
     console.log(data)
     return (
-        <div>
+        <div className="">
             <div className='py-14'>
                 <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">COMPLETE ASSIGNMENT : {count}</h2>
             </div>

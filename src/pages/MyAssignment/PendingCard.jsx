@@ -27,7 +27,7 @@ const PendingCard = ({ mycard }) => {
     return (
         <div>
             <div>
-                <div className="newtime">
+                <div className="newtime ">
                     <div className="top-section">
                         <div className="border"></div>
                         <div className="icons">

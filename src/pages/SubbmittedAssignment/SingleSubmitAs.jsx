@@ -27,7 +27,7 @@ const SingleSubmitAs = ({ data }) => {
     return (
         <div>
             <div>
-                <div className="newtime">
+                <div className="newtime ">
                     <div className="top-section">
                         <div className="border"></div>
                         <div className="icons">
@@ -47,7 +47,7 @@ const SingleSubmitAs = ({ data }) => {
                         </div>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 rounded-2xl gap-4 mt-4 px-4'>
-                        <img className="  rounded-2xl" src={photo} alt="" />
+                        <img className="  rounded-2xl h-[450px] w-full" src={photo} alt="" />
                         <div className="bg-white rounded-2xl">
                             <div className="p-4">
                                 <div className="badge px-6 py-4 mb-4 text-base border-red-400 text-pink-600 " >{status}</div>
@@ -85,7 +85,7 @@ const SingleSubmitAs = ({ data }) => {
                         {/* answer part */}
                         <div className="bg-white rounded-2xl mt-4 ">
                             <div className="p-4">
-                                <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink}</span></h2>
+                                <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink.slice(0,50)}</span></h2>
                                 <div className="mt-2">
                                     <h2 className="font-bold text-lg">Answer Feedback:</h2>
                                     <div className="sm:h-[150px] md:h-[120px] lg:h-[60px]">
