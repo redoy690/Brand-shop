@@ -31,7 +31,7 @@ const UpdateAssignment = () => {
 
         if (questionEmail == user.email) {
 
-            fetch(`http://localhost:5000/assignment/${_id}`, {
+            fetch(`https://group-study-assignment-server-iota.vercel.app/assignment/${_id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

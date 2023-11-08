@@ -181,7 +181,7 @@ const Navbar = () => {
                 </div>
 
             </div>
-            <div className="border-2 border-red-100"></div>
+            
         </div>
     );
 };

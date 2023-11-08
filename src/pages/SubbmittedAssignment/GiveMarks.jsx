@@ -71,7 +71,7 @@ const GiveMarks = () => {
 
 
         // send data to the server
-        fetch('http://localhost:5000/marks', {
+        fetch('https://group-study-assignment-server-iota.vercel.app/marks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -96,7 +96,7 @@ const GiveMarks = () => {
 
 
 
-        fetch(`http://localhost:5000/answers/${_id}`, {
+        fetch(`https://group-study-assignment-server-iota.vercel.app/answers/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

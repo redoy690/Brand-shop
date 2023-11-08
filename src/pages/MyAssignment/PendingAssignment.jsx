@@ -12,7 +12,7 @@ const PendingAssignment = () => {
     const { isPending, data: myassign } = useQuery({
         queryKey: ['completeassignment'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/answers?questionEmail=${user.email}`)
+            const res = await fetch(`https://group-study-assignment-server-iota.vercel.app/answers?questionEmail=${user.email}`)
             return res.json()
         }
     })
@@ -25,7 +25,7 @@ const PendingAssignment = () => {
         <div>
             <div className="">
                 <div className='py-14'>
-                    <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">MY PENDING ASSIGNMENT:{myassign.length}</h2>
+                    <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">MY PENDING ASSIGNMENT</h2>
                 </div>
                 <div className="grid grid-cols-1 gap-8 mt-10">
                     {

@@ -55,7 +55,7 @@ const CreateAssignment = () => {
 
         console.log(newProduct)
         // send data to the server
-        fetch('http://localhost:5000/assignment', {
+        fetch('https://group-study-assignment-server-iota.vercel.app/assignment', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

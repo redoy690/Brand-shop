@@ -66,33 +66,33 @@ const router = createBrowserRouter([
             {
                 path: "/subbmittedassignment",
                 element: <PrivateRoute><SubbmittedAssignment></SubbmittedAssignment></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/assignmentCount')
+                loader: () => fetch('https://group-study-assignment-server-iota.vercel.app/assignmentCount')
             },
             {
                 path: "/submitcompleteas",
                 element: <PrivateRoute><SubmitCompleteas></SubmitCompleteas></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/resultCount')
+                loader: () => fetch('https://group-study-assignment-server-iota.vercel.app/resultCount')
             },
             {
                 path: "/viewassignment/:id",
                 element: <PrivateRoute><ViewAssignment></ViewAssignment></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`)
+                loader: ({ params }) => fetch(`https://group-study-assignment-server-iota.vercel.app/assignment/${params.id}`)
             },
             {
                 path: "/viewassignment/:id/answerform",
                 element: <PrivateRoute><AnswerForm></AnswerForm></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`)
+                loader: ({ params }) => fetch(`https://group-study-assignment-server-iota.vercel.app/assignment/${params.id}`)
             },
 
             {
                 path: "/updateassignment/:id",
                 element: <PrivateRoute><UpdateAssignment></UpdateAssignment></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/assignment/${params.id}`)
+                loader: ({ params }) => fetch(`https://group-study-assignment-server-iota.vercel.app/assignment/${params.id}`)
             },
             {
                 path: "/subbmittedassignment/givenmarks/:id",
                 element: <PrivateRoute><GiveMarks></GiveMarks></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/answer/${params.id}`)
+                loader: ({ params }) => fetch(`https://group-study-assignment-server-iota.vercel.app/answer/${params.id}`)
             }
         ]
 

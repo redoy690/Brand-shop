@@ -33,7 +33,7 @@ const SubmitCompleteas = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/result?page=${currentPage}&size=${itemsPerPage}'`)
+        fetch(`https://group-study-assignment-server-iota.vercel.app/result?page=${currentPage}&size=${itemsPerPage}'`)
             .then(res => res.json())
             .then(data => setData(data))
     }, [currentPage, itemsPerPage])

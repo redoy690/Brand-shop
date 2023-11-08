@@ -45,7 +45,7 @@ const AnswerForm = () => {
 
         }
 
-        fetch('http://localhost:5000/answer', {
+        fetch('https://group-study-assignment-server-iota.vercel.app/answer', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -34,7 +34,7 @@ const SubbmittedAssignment = () => {
     
 
     useEffect(() => {
-        fetch(`http://localhost:5000/answer?page=${currentPage}&size=${itemsPerPage}'`)
+        fetch(`https://group-study-assignment-server-iota.vercel.app/answer?page=${currentPage}&size=${itemsPerPage}'`)
             .then(res => res.json())
             .then(data => setData(data))
     }, [currentPage, itemsPerPage])
