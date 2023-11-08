@@ -1,6 +1,6 @@
 # Online Group Study Management Project
 
-Live Link: 
+Live Link: https://group-study-a4c36.web.app/
 
 
 ## Here I am discussing 5 points about my project :
