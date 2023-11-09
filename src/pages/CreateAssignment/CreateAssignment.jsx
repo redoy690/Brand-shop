@@ -57,7 +57,7 @@ const CreateAssignment = () => {
         }
 
 
-        console.log(newProduct)
+       
         // send data to the server
         fetch('https://group-study-assignment-server-iota.vercel.app/assignment', {
             method: 'POST',
@@ -81,7 +81,7 @@ const CreateAssignment = () => {
                 }
             })
 
-
+     
 
     }
     return (
@@ -90,8 +90,9 @@ const CreateAssignment = () => {
                 <div className='py-14'>
                     <h2 className="font-bold text-center  py-4 text-xl md:text-4xl text-success border-4 border-success rounded-2xl">CREATE ASSIGNMENT</h2>
                 </div>
+                
                 <form onSubmit={handleAddAssignment}>
-
+        
                     <div className="md:flex gap-12 mb-6">
                         <div className="form-control md:w-1/2">
                             <label className="label">

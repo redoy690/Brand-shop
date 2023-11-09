@@ -2,24 +2,27 @@ import { useContext, useState } from 'react';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const UpdateAssignment = () => {
     const { user } = useContext(AuthContext)
     const assignment = useLoaderData()
     const { _id, title, level, totalMarks, date, questiondetails, photo, displayName, email, questionEmail } = assignment
 
-
+    console.log(date)
     const navigate = useNavigate()
 
 
     const [selects, setSelects] = useState(level)
+    const [startDate, setStartDate] = useState(new Date());
     const handleupdateAssignment = event => {
         event.preventDefault();
         const form = event.target
         const title = form.title.value;
         const level = selects;
         const totalMarks = form.marks.value;
-        const date = form.date.value;
+        const date = startDate
         const questiondetails = form.details.value;
         const photo = form.photo.value;
 
@@ -67,7 +70,7 @@ const UpdateAssignment = () => {
         <div>
             <div className="bg-[#fff] border px-4 md:px-10 lg:px-32 pb-10 my-10">
                 <div className='py-14'>
-                    <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">UPDATE ASSIGNMENT</h2>
+                    <h2 className="font-bold text-center  py-4 text-xl md:text-5xl text-success border-4 border-success rounded-2xl">UPDATE ASSIGNMENT</h2>
                 </div>
                 <form onSubmit={handleupdateAssignment}>
 
@@ -108,9 +111,10 @@ const UpdateAssignment = () => {
                                 <label className="label">
                                     <span className="label-text">Date</span>
                                 </label>
-                                <label className="input-group">
+                                {/* <label className="input-group">
                                     <input type="date" placeholder="Date" defaultValue={date} name="date" className="input input-bordered w-full" required />
-                                </label>
+                                </label> */}
+                                 <DatePicker className="border-2 pl-2 py-2 rounded-xl" defaultValue={date} selected={startDate} onChange={(date) => setStartDate(date)}  />
                             </div>
                         </div>
                     </div>
@@ -140,7 +144,7 @@ const UpdateAssignment = () => {
                             </label>
                         </div>
                     </div>
-                    <input type="submit" className="btn btn-block mb-10  btn-success hover:bg-white hover:text-success  text-white font-bold text-3xl" value="Update Assignment" />
+                    <input type="submit" className="btn btn-block mb-10  btn-success hover:bg-white hover:text-success  text-white font-bold text-xl md:text-3xl" value="Update Assignment" />
                 </form>
             </div>
         </div>
