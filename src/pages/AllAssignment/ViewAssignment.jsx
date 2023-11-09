@@ -24,7 +24,7 @@ const ViewAssignment = () => {
                             </div>
                             <div className="flex">
                                 <h3 className="w-[150px]">Assignment Date</h3>
-                                <h3>: {date}</h3>
+                                <h3>: {date.slice(0,10)}</h3>
                             </div>
                             <div className="mt-4">
                                 <h3 className="font-bold text-xl">Assignment Description: <span className='font-normal text-base'>{questiondetails}</span></h3>

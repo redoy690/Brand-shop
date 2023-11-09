@@ -86,7 +86,7 @@ const UpdateAssignment = () => {
                             </label>
 
                             <select className="select select-bordered w-full max-w-xs" defaultValue={level} value={selects} onChange={e => setSelects(e.target.value)}>
-                                <option >Select Level</option>
+                                
                                 <option>Easy</option>
                                 <option>Medium</option>
                                 <option>Hard</option>

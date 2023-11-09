@@ -2,10 +2,14 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 
 
 
 const CreateAssignment = () => {
+    const [startDate, setStartDate] = useState(new Date());
     const navigate = useNavigate()
     const { user } = useContext(AuthContext)
     const { displayName, email } = user || '';
@@ -16,16 +20,16 @@ const CreateAssignment = () => {
         const title = form.title.value;
         const level = selects;
         const totalMarks = form.marks.value;
-        const date = form.date.value;
+        const date = startDate
         const questiondetails = form.details.value;
         const photo = form.photo.value;
         const status = 'none'
         const questiondisplayName = displayName
         const questionEmail = email
         const answerlink = 'none'
-        const answertext ='none'
-        const answerDisplayName ='none'
-        const answeremail ='none'
+        const answertext = 'none'
+        const answerDisplayName = 'none'
+        const answeremail = 'none'
         const givenmarks = 'none'
         const marksfeedback = 'none'
         const givermarksDisplayName = 'none'
@@ -84,7 +88,7 @@ const CreateAssignment = () => {
         <div>
             <div className="bg-[#fff] border px-4 md:px-10 lg:px-32 pb-10 my-10">
                 <div className='py-14'>
-                    <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">CREATE ASSIGNMENT</h2>
+                    <h2 className="font-bold text-center  py-4 text-xl md:text-4xl text-success border-4 border-success rounded-2xl">CREATE ASSIGNMENT</h2>
                 </div>
                 <form onSubmit={handleAddAssignment}>
 
@@ -102,12 +106,13 @@ const CreateAssignment = () => {
                                 <span className="label-text">Assignment Difficulty Level</span>
                             </label>
 
-                            <select className="select select-bordered w-full max-w-xs" value={selects} onChange={e => setSelects(e.target.value)}>
+                            <select className="select select-bordered w-[190px] max-w-xs" value={selects} onChange={e => setSelects(e.target.value)}>
                                 <option >Select Level</option>
                                 <option>Easy</option>
                                 <option>Medium</option>
                                 <option>Hard</option>
                             </select>
+
                         </div>
                     </div>
 
@@ -124,10 +129,12 @@ const CreateAssignment = () => {
                             <label className="label">
                                 <span className="label-text">Date</span>
                             </label>
-                            <label className="input-group">
+                            {/* <label className="input-group">
                                 <input type="date" placeholder="Date" name="date" className="input input-bordered w-full" required />
-                            </label>
+                            </label> */}
+                            <DatePicker className="border-2 pl-2 py-2 rounded-xl" selected={startDate} onChange={(date) => setStartDate(date)}  />
                         </div>
+
                     </div>
 
                     <div className="md:flex gap-12 mb-6">
@@ -155,7 +162,7 @@ const CreateAssignment = () => {
                             </label>
                         </div>
                     </div>
-                    <input type="submit" className="btn btn-block mb-10  bg-success text-white hover:border-success hover:bg-white hover:text-success font-bold text-3xl" value="Create Assignment" />
+                    <input type="submit" className="btn btn-block mb-10  bg-success text-white hover:border-success hover:bg-white hover:text-success font-bold text-xl md:text-3xl" value="Create Assignment" />
                 </form>
             </div>
         </div>

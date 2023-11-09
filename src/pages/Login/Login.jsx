@@ -17,7 +17,7 @@ const Login = () => {
     const handleSocialLogin = (media) => {
         media()
             .then(res => {
-                console.log(res)
+                console.log(res)   
                 navigate(location?.state ? location.state : '/')
                 toast.success("Login successfull")
             })
@@ -38,6 +38,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.user);
                 toast.success("Login successfull")
+                
                 navigate(location?.state ? location.state : '/')       
             })
             .catch(error => {

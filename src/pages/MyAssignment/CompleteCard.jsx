@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const CompleteCard = ({ mycard }) => {
-    const { 
+    const {
         _id,
         status,
         title,
@@ -19,7 +19,9 @@ const CompleteCard = ({ mycard }) => {
         marksfeedback,
         givermarksDisplayName,
         givenmarksEmail
-     } = mycard
+    } = mycard
+
+    const percentage = (givenmarks / totalMarks) * 100
     return (
         <div>
             <div className="newtime">
@@ -45,7 +47,7 @@ const CompleteCard = ({ mycard }) => {
                     <img className="  rounded-2xl" src={photo} alt="" />
                     <div className="bg-white rounded-2xl">
                         <div className="p-4">
-
+                            <div className="badge px-6 py-4 mb-4 text-base border-red-400 text-pink-600 " >{status}</div>
                             <h2 className="font-bold text-2xl ">Assignment Title: {title}</h2>
                             <div className="flex">
                                 <h3 className="w-[150px]">Assignment level</h3>
@@ -57,7 +59,7 @@ const CompleteCard = ({ mycard }) => {
                             </div>
                             <div className="flex">
                                 <h3 className="w-[150px]">Assignment Date</h3>
-                                <h3>: {date}</h3>
+                                <h3>: {date.slice(0, 10)}</h3>
                             </div>
                             <div className="mt-4">
                                 <h2 className="font-bold text-2xl">Assignment Description:</h2>
@@ -73,7 +75,8 @@ const CompleteCard = ({ mycard }) => {
                     {/* answer part */}
                     <div className="bg-white rounded-2xl mt-4 ">
                         <div className="p-4">
-                            <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink.slice(0,50)}</span></h2>
+                            <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink.slice(0, 15)}...</span></h2>
+                            <button className='btn btn-success mt-2 text-white font-bold  hover:text-success  hover:bg-white'><a href={answerlink}>Click To see Full link</a></button>
                             <div className="mt-2">
                                 <h2 className="font-bold text-lg">Answer Feedback:</h2>
                                 <div className="sm:h-[150px] md:h-[120px] lg:h-[60px]">
@@ -94,14 +97,24 @@ const CompleteCard = ({ mycard }) => {
                     <div className="bg-white rounded-2xl mt-4 ">
                         <div className="p-4">
                             <div className="">
-                                <h2 className="font-bold text-base ">Achived Marks:
-                                    {
-                                        status == "Pending" ?
-                                            ''
-                                            :
-                                            <span className='ml-2'>{givenmarks}</span>
-                                    }
-                                </h2>
+                                <div className="grid gird-cols-1 md:grid-cols-2">
+                                    <h2 className="font-bold text-xl ">Achived Marks:
+                                        {
+                                            status == "Pending" ?
+                                                ''
+                                                :
+                                                <span className='ml-2'>{givenmarks}</span>
+                                        }
+                                    </h2>
+                                    <h2 className="font-bold text-xl ">Achived Percentage:
+                                        {
+                                            status == "Pending" ?
+                                                ''
+                                                :
+                                                <span className='ml-2'>{percentage}%</span>
+                                        }
+                                    </h2>
+                                </div>
                                 <h2 className="font-bold text-base mt-4">Marking Feedback:</h2>
                                 <div className="sm:h-[150px] md:h-[120px] lg:h-[80px]">
                                     {
@@ -113,7 +126,7 @@ const CompleteCard = ({ mycard }) => {
                                 </div>
 
                             </div>
-                            <div className='grid grid-cols-1 md:grid-cols-2 gap-8  '>
+                            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 '>
                                 <div className="">
                                 </div>
                                 <div className=" ">

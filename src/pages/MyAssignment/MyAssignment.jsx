@@ -18,11 +18,11 @@ const MyAssignment = () => {
         return <span className="loading loading-spinner loading-lg ml-[50%] mt-[10%]"></span>
     }
     return (
-        <div >
-            <div className='py-14'>
-                <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl">MY RUNNING ASSIGNMENT</h2>
+        <div className="my-12">
+            <div className=''>
+                <h2 className="font-bold text-center  py-4 text-xl md:text-5xl text-success border-4 border-success rounded-2xl">MY RUNNING ASSIGNMENT : {myassign.length}</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 mt-20">
                 {
                     myassign.map(mycard => <MyAssCard key={mycard._id} mycard={mycard}></MyAssCard>)
                 }

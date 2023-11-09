@@ -1,6 +1,6 @@
 
 import { useContext } from 'react';
-import {  useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../providers/AuthProvider';
 
@@ -42,6 +42,10 @@ const GiveMarks = () => {
         const marksfeedback = form.feedback.value;
         const status = 'Complete'
 
+
+
+
+
         const updateMarks = {
             title,
             level,
@@ -62,12 +66,21 @@ const GiveMarks = () => {
             givenmarksEmail
         }
 
+        const givenmarksnumber = parseInt(givenmarks)
+        const totalMarksnumber = parseInt(totalMarks)
 
-        console.log(updateMarks)
 
 
-  
+        if (givenmarksnumber > totalMarksnumber) {
+            Swal.fire({
+                title: 'error',
+                text: 'Submited Marks must be smaller than Total marks',
+                icon: 'error',
+                confirmButtonText: 'Back'
 
+            })
+            return
+        }
 
 
         // send data to the server
@@ -85,7 +98,7 @@ const GiveMarks = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'success',
-                        text: 'Submited Marks successfully',
+                        text: 'Submiteddddd Marks successfully',
                         icon: 'success',
                         confirmButtonText: 'Back'
                     })
@@ -102,7 +115,7 @@ const GiveMarks = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                
+
             })
 
 
@@ -117,10 +130,10 @@ const GiveMarks = () => {
     return (
 
         <div className=''>
-            <h2 className="font-bold text-center  py-4 text-5xl text-success border-4 border-success rounded-2xl  my-8">GIVE MARKS</h2>
+            <h2 className="font-bold text-center  py-4 text-xl md:text-5xl text-success border-4 border-success rounded-2xl  my-8">GIVE MARKS</h2>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8'>
                 <div className="card bg-base-100 shadow-xl border-2 ">
-                    <h2 className='text-center text-2xl my-4 font-bold'>ASSIGNMENT DETAILS</h2>
+                    <h2 className='text-center text-2xl my-4 font-bold  border-b-2 pb-4'>ASSIGNMENT DETAILS</h2>
                     <figure><img src={photo} alt="Shoes" /></figure>
                     <div className="card-body">
                         <div className="">
@@ -144,7 +157,8 @@ const GiveMarks = () => {
                     <h2 className='text-center text-2xl my-4 font-bold border-b-2 pb-4'>ANSWER DETAILS</h2>
                     <div className="card-body">
                         <h2 className=" ">
-                            <p className='text-lg font-bold'>Answer Link:<br/> <span className='text-sm font-normal'>{answerlink.slice(0, 40)}</span></p>
+                            <p className='text-lg font-bold'>Answer Link: <span className='text-base font-normal'>{answerlink.slice(0, 15)} .. </span></p>
+                            <button className='btn btn-success mt-2 text-white font-bold text-sm md:text-xl hover:text-success  hover:bg-white'><a href={answerlink}>Click To see Full link</a></button>
                         </h2>
                         <p className='text-lg font-bold mt-4'>Node Text: <span className='font-normal'>{answertext}</span></p>
                     </div>
@@ -172,6 +186,10 @@ const GiveMarks = () => {
                     </form>
                 </div>
 
+            </div>
+            <div className='mb-12'>
+                <iframe className='w-full h-[80vh]'  src={answerlink} title="W3Schools Free Online Web Tutorials">
+                </iframe>
             </div>
         </div>
     );

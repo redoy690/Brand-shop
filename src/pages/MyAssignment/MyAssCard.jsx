@@ -41,7 +41,7 @@ const MyAssCard = ({ mycard }) => {
                             </div>
                             <div className="flex">
                                 <h3 className="w-[150px]">Assignment Date</h3>
-                                <h3>: {date}</h3>
+                                <h3>: {date.slice(0,10)}</h3>
                             </div>
                             <div className="mt-4">
                                 <h2 className="font-bold text-2xl">Assignment Description:</h2>

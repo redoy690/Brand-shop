@@ -3,14 +3,14 @@
 const Picgallery = () => {
     return (
         <div>
-            <div>
-                {/* <div>
+            {/* <div>
+                <div>
                     <div className="flex items-center justify-center bg-gray-50 p-4">
                         <div className="flex flex-col max-w-7xl w-full md:w-[80%]">
                             <div className="flex flex-col lg:flex-row ">
                                 <div className="bg-white shadow-lg rounded-xl flex items-start h-32 w-[90%] lg:w-1/2 justify-center py-4 px-8 mx-4 my-2">
                                     <div className="flex items-center justify-start w-full">
-                                        <div className="flex-col w-[85%]" data-aos="fade-right"
+                                        <div className="flex-col w-[85%]" data-aos="fade-top"
                                             data-aos-offset="300"
                                             data-aos-easing="ease-in-sine">
                                             <div className="text-sm font-medium text-violet-600 my-2">Total Running Assignment</div>
@@ -29,7 +29,7 @@ const Picgallery = () => {
                                 </div>
                                 <div className="bg-white shadow-lg rounded-xl flex items-start h-32 w-[90%] lg:w-1/2 justify-center py-4 px-8 mx-4 my-2">
                                     <div className="flex items-center justify-start w-full">
-                                        <div className="flex-col w-[85%]" data-aos="fade-left"
+                                        <div className="flex-col w-[85%]" data-aos="fade-top"
                                             data-aos-offset="300"
                                             data-aos-easing="ease-in-sine">
                                             <div className="text-sm font-medium text-violet-600 my-2">Total Pending Assignment</div>
@@ -51,7 +51,7 @@ const Picgallery = () => {
                             <div className="flex flex-col lg:flex-row ">
                                 <div className="bg-white shadow-lg rounded-xl flex items-start max-w-1/2 w-[90%] lg:w-1/2 justify-center py-4 px-4 mx-4 my-2">
                                     <div className="flex items-center justify-start w-full">
-                                        <div className="flex-col w-[85%]" data-aos="fade-right"
+                                        <div className="flex-col w-[85%]" data-aos="fade-top"
                                             data-aos-offset="300"
                                             data-aos-easing="ease-in-sine">
                                             <div className="text-sm font-medium text-violet-600 my-2">Total Complete Assignment</div>
@@ -111,7 +111,7 @@ const Picgallery = () => {
                                 </div>
                                 <div className="bg-white shadow-lg rounded-xl flex items-start max-w-1/2 w-[90%] lg:w-1/2 justify-center py-4 px-4 mx-4 my-2">
                                     <div className="flex items-center justify-start w-full">
-                                        <div className="flex-col w-[85%]" data-aos="fade-left"
+                                        <div className="flex-col w-[85%]" data-aos="fade-top"
                                             data-aos-offset="300"
                                             data-aos-easing="ease-in-sine">
                                             <div className="text-sm font-medium text-violet-600 my-2">Weekly Users</div>
@@ -176,8 +176,8 @@ const Picgallery = () => {
                     </div>
                     <script src="https://cdn.tailwindcss.com"></script>
 
-                </div> */}
-            </div>
+                </div>
+            </div> */}
             <div>
                 <div>
                     <div className="flex justify-center ">

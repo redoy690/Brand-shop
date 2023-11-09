@@ -23,7 +23,7 @@ const PendingCard = ({ mycard }) => {
         givenmarksEmail
     } = mycard
 
-  
+
     return (
         <div>
             <div>
@@ -50,7 +50,7 @@ const PendingCard = ({ mycard }) => {
                         <img className="  rounded-2xl" src={photo} alt="" />
                         <div className="bg-white rounded-2xl">
                             <div className="p-4">
-                                
+                                <div className="badge px-6 py-4 mb-4 text-base border-red-400 text-pink-600 " >{status}</div>
                                 <h2 className="font-bold text-2xl ">Assignment Title: {title}</h2>
                                 <div className="flex">
                                     <h3 className="w-[150px]">Assignment level</h3>
@@ -62,14 +62,14 @@ const PendingCard = ({ mycard }) => {
                                 </div>
                                 <div className="flex">
                                     <h3 className="w-[150px]">Assignment Date</h3>
-                                    <h3>: {date}</h3>
+                                    <h3>: {date.slice(0, 10)}</h3>
                                 </div>
                                 <div className="mt-4">
                                     <h2 className="font-bold text-2xl">Assignment Description:</h2>
                                     <div className="sm:h-[150px] md:h-[120px] lg:h-[80px]">
                                         <p >{questiondetails.slice(0, 160)}</p>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,8 @@ const PendingCard = ({ mycard }) => {
                         {/* answer part */}
                         <div className="bg-white rounded-2xl mt-4 ">
                             <div className="p-4">
-                                <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink}</span></h2>
+                                <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink.slice(0, 15)}...</span></h2>
+                                <button className='btn btn-success mt-2 text-white font-bold  hover:text-success  hover:bg-white'><a href={answerlink}>Click To see Full link</a></button>
                                 <div className="mt-2">
                                     <h2 className="font-bold text-lg">Answer Feedback:</h2>
                                     <div className="sm:h-[150px] md:h-[120px] lg:h-[60px]">
@@ -86,7 +87,7 @@ const PendingCard = ({ mycard }) => {
                                     </div>
                                     <div className="md:flex mb-1">
                                         <div className="flex-1"></div>
-                                        <div className="border-2  mt-4 mx-auto w-[80%] text-center md:w-[45%]  rounded-xl px-8 py-2 ">
+                                        <div className="border-2  mt-4 mx-auto w-[85%] text-center md:w-[50%]  rounded-xl px-8 py-2 ">
                                             <p className="text-xs">Answer Given By:</p>
                                             <p>UserName: {answerDisplayName}</p>
                                             <p className="text-xs">({answeremail})</p>
@@ -118,7 +119,7 @@ const PendingCard = ({ mycard }) => {
                                     </div>
 
                                 </div>
-                                <div className='grid grid-cols-1 md:grid-cols-2 gap-8  '>
+                                <div className='grid grid-cols-1 md:grid-cols-2 gap-8  mt-14'>
                                     <div className="">
                                     </div>
                                     <div className=" ">
@@ -144,7 +145,7 @@ const PendingCard = ({ mycard }) => {
                     </div>
                 </div>
             </div>
-            
+
         </div>
     );
 };

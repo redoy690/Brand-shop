@@ -1,6 +1,8 @@
+
 import { Link } from 'react-router-dom';
 
-const SubmitCompleteasCard = ({data}) => {
+const SubmitCompleteasCard = ({ data }) => {
+
     const {
         _id,
         title,
@@ -21,6 +23,8 @@ const SubmitCompleteasCard = ({data}) => {
         givermarksDisplayName,
         givenmarksEmail
     } = data
+
+    const percentage = (givenmarks / totalMarks) * 100
 
 
     return (
@@ -61,20 +65,21 @@ const SubmitCompleteasCard = ({data}) => {
                                 </div>
                                 <div className="flex">
                                     <h3 className="w-[150px]">Assignment Date</h3>
-                                    <h3>: {date}</h3>
+                                    <h3>: {date.slice(0, 10)}</h3>
                                 </div>
                                 <div className="mt-4">
                                     <h2 className="font-bold text-2xl">Assignment Description:</h2>
                                     <div className="sm:h-[150px] md:h-[120px] lg:h-[80px]">
                                         <p >{questiondetails.slice(0, 160)}</p>
                                     </div>
-                                    <div className="md:flex">
+                                    <div className="md:flex mt-8">
                                         <div className="flex-1"></div>
                                         <div className="border-2  mt-4 mx-auto w-[84%] text-center md:w-[45%]  rounded-xl px-8 py-2 ">
                                             <p className="text-xs">Assignment Created By:</p>
                                             <p>UserName: {questiondisplayName}</p>
                                             <p className="text-xs">({questionEmail})</p>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -84,15 +89,17 @@ const SubmitCompleteasCard = ({data}) => {
                         {/* answer part */}
                         <div className="bg-white rounded-2xl mt-4 ">
                             <div className="p-4">
-                                <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink.slice(0,50)}</span></h2>
+                                <h2 className="font-bold text-lg ">Answer PDF Link: <span className='text-base font-normal'> {answerlink.slice(0, 15)}..</span></h2>
+                                <button className='btn btn-success mt-2 text-white font-bold  hover:text-success  hover:bg-white'><a href={answerlink}>Click To see Full link</a></button>
                                 <div className="mt-2">
                                     <h2 className="font-bold text-lg">Answer Feedback:</h2>
                                     <div className="sm:h-[150px] md:h-[120px] lg:h-[60px]">
                                         <p >{answertext.slice(0, 160)}</p>
+
                                     </div>
                                     <div className="md:flex mb-1">
                                         <div className="flex-1"></div>
-                                        <div className="border-2  mt-4 mx-auto w-[80%] text-center md:w-[44%]  rounded-xl px-8 py-2 ">
+                                        <div className="border-2  mt-4 mx-auto w-[86%] text-center md:w-[50%]  rounded-xl px-8 py-2 ">
                                             <p className="text-xs">Answer Given By:</p>
                                             <p>UserName: {answerDisplayName}</p>
                                             <p className="text-xs">({answeremail})</p>
@@ -105,26 +112,37 @@ const SubmitCompleteasCard = ({data}) => {
                         <div className="bg-white rounded-2xl mt-4 ">
                             <div className="p-4">
                                 <div className="">
-                                    <h2 className="font-bold text-base ">Achived Marks: 
-                                    {
-                                        status == "Pending" ?
-                                        ''
-                                        :
-                                        <span className='ml-2'>{givenmarks}</span>
-                                    }
-                                    </h2>
+                                    <div className='grid grid-cols-1 md:grid-cols-2'>
+                                        <h2 className="font-bold text-xl ">Achived Marks:
+                                            {
+                                                status == "Pending" ?
+                                                    ''
+                                                    :
+                                                    <span className='ml-2'>{givenmarks}</span>
+                                            }
+                                        </h2>
+                                        <h2 className="font-bold text-xl ">Achived Percentage:
+                                            {
+                                                status == "Pending" ?
+                                                    ''
+                                                    :
+                                                    <span className='ml-2'>{percentage}%</span>
+                                            }
+                                        </h2>
+                                    </div>
                                     <h2 className="font-bold text-base mt-4">Marking Feedback:</h2>
                                     <div className="sm:h-[150px] md:h-[120px] lg:h-[80px]">
                                         {
                                             status == "Pending" ?
-                                            ''
-                                            :
-                                            <p >{marksfeedback.slice(0, 160)}</p>
+                                                ''
+                                                :
+                                                <p >{marksfeedback.slice(0, 160)}</p>
                                         }
                                     </div>
 
                                 </div>
-                                <div className='grid grid-cols-1 md:grid-cols-2 gap-8  '>
+
+                                <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 '>
                                     <div className="">
                                     </div>
                                     <div className=" ">
@@ -135,7 +153,7 @@ const SubmitCompleteasCard = ({data}) => {
                                                 </Link>
                                                 :
                                                 <div className="border-2 mx-auto  text-center w-[85%] rounded-xl ml-8 mb-4 py-2 ">
-                                                    <p className="text-xs">Marking Given By:</p>
+                                                    <p className="text-xs">Marks Given By:</p>
                                                     <p>UserName: {givermarksDisplayName}</p>
                                                     <p className="text-xs">({givenmarksEmail})</p>
                                                 </div>

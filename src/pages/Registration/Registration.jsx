@@ -6,21 +6,21 @@ import { updateProfile } from "firebase/auth";
 
 
 const Registration = () => {
-    const {createUser} = useContext(AuthContext)
-    const navigate =useNavigate()
+    const { createUser } = useContext(AuthContext)
+    const navigate = useNavigate()
     const location = useLocation()
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
-    
+
         const email = e.target.email.value;
         const password = e.target.password.value;
         const name = e.target.name.value;
         const photo = e.target.photo.value
-    
+
         console.log(email, password, name, photo)
-    
-    
+
+
         if (password.length < 6) {
             toast.error("Password Must be 6 characters")
             return;
@@ -31,7 +31,7 @@ const Registration = () => {
             toast.error("Password Must be have a symbol")
             return;
         }
-    
+
         createUser(email, password, name)
             .then(res => {
                 console.log(res)
@@ -41,17 +41,15 @@ const Registration = () => {
                     photoURL: photo
                 })
                 navigate(location?.state ? location.state : '/')
-    
-    
             })
-    
+
             .catch(error => {
                 console.log(error)
                 toast.error("Email already Used")
             })
-    
-    
-    
+
+
+
     }
     return (
         <div>

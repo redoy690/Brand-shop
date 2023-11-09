@@ -89,7 +89,7 @@ const SingleAssignment = ({ assi, setAssignment, assignment }) => {
                         </div>
                         <div className="flex">
                             <h3 className="w-[150px]">Assignment Date</h3>
-                            <h3>: {date}</h3>
+                            <h3>: {date.slice(0,10)}</h3>
                         </div>
                         <div className="mt-4">
                             <h2 className="font-bold text-2xl">Assignment Description:</h2>
@@ -98,8 +98,8 @@ const SingleAssignment = ({ assi, setAssignment, assignment }) => {
                             </div>
                             <div className="md:flex">
                                 <div className="flex-1"></div>
-                                <div className="border-2  mt-4 mx-auto w-[80%] text-center md:w-[45%]  rounded-xl px-8 py-2 ">
-                                    <p className="text-xs">Assignment Created:</p>
+                                <div className="border-2  mt-4 mx-auto w-[86%] text-center md:w-[50%]  rounded-xl px-8 py-2 ">
+                                    <p className="text-xs">Assignment Created By:</p>
                                     <p>UserName: {questiondisplayName}</p>
                                     <p className="text-xs">({questionEmail})</p>
                                 </div>

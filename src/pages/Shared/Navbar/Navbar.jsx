@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 
@@ -33,14 +33,7 @@ const Navbar = () => {
                 Create Assignment
             </NavLink>
         </li>
-        {/* <li className="border-2 rounded-xl m-1 bg-slate-100 ">
-            <NavLink to="/subbmittedassignment" className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "text-blue underline text-red-600 bg-white" : ""
-            }
-            >
-                Submitted Assignment
-            </NavLink>
-        </li> */}
+       
         <li tabIndex={0} className="border-2 rounded-xl bg-slate-100 m-1 ">
             <details className="">
                 <summary>Submitted Assignment</summary>
@@ -64,9 +57,6 @@ const Navbar = () => {
                 </ul>
             </details>
         </li>
-
-
-
         <li tabIndex={0} className="border-2 rounded-xl bg-slate-100 m-1 ">
             <details className="">
                 <summary>My Assignment</summary>
@@ -98,13 +88,6 @@ const Navbar = () => {
                 </ul>
             </details>
         </li>
-
-
-
-
-
-
-
         {
             !user &&
             <li className="border-2 rounded-xl m-1 bg-slate-100">
@@ -181,7 +164,7 @@ const Navbar = () => {
                 </div>
 
             </div>
-            
+
         </div>
     );
 };

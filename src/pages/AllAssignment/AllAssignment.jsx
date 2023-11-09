@@ -28,7 +28,7 @@ const AllAssignment = () => {
     // })
 
     return (
-        <div>
+        <div className="mb-12">
             <div className='py-14'>
                 <h2 className="font-bold text-center mx-2  py-4 text-2xl md:text-5xl text-success border-4 border-success rounded-2xl">ALL ASSIGNMENT </h2>
             </div>
